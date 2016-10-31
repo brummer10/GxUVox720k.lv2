@@ -32,11 +32,12 @@ typedef enum
 {
    EFFECTS_OUTPUT,
    EFFECTS_INPUT,
-   BASS, 
    GAIN, 
+   CLIPPING, 
+   BASS, 
+   TREBLE, 
    REVERBLEVEL, 
    REVERB, 
-   TREBLE, 
    VOLUME, 
 } PortIndex;
 
