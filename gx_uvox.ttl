@@ -121,9 +121,9 @@ rdfs:comment """
         lv2:index 7 ;
         lv2:symbol "REVERB" ;
         lv2:name "REVERB" ;
-        lv2:default 2.0 ;
+        lv2:default 1.0 ;
         lv2:minimum 0.0 ;
-        lv2:maximum 2.0 ;
+        lv2:maximum 1.0 ;
         lv2:portProperty lv2:integer;
         lv2:portProperty lv2:enumeration ; 
         lv2:scalePoint [rdfs:label "ON"; rdf:value 0];
