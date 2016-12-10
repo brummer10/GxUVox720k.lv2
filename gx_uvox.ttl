@@ -24,8 +24,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix guiext: <http://lv2plug.in/ns/extensions/ui#>.
-@prefix mod: <http://portalmod.com/ns/modgui#>.
-@prefix time: <http://lv2plug.in/ns/ext/time/#>.
+@prefix time: <http://lv2plug.in/ns/ext/time#>.
 @prefix units: <http://lv2plug.in/ns/extensions/units#> .
 
 <http://guitarix.sourceforge.net#me>
@@ -48,9 +47,10 @@
     lv2:project <http://guitarix.sourceforge.net/plugins/gx_uvox_> ;
     lv2:optionalFeature lv2:hardRTCapable ;
       
-    lv2:minorVersion 28;
-    lv2:microVersion 3;
+    lv2:minorVersion 34;
+    lv2:microVersion 0;
 
+  guiext:ui <http://guitarix.sourceforge.net/plugins/gx_uvox_gui#_uvox_>;
     
 rdfs:comment """
 
@@ -64,22 +64,23 @@ rdfs:comment """
         lv2:index 0 ;
         lv2:symbol "out" ;
         lv2:name "Out"
-    ]       , [
+    ] , [
         a lv2:AudioPort ,
             lv2:InputPort ;
         lv2:index 1 ;
         lv2:symbol "in" ;
         lv2:name "In" ;
-    ]       , [
+    ] 
+      , [
         a lv2:InputPort ,
             lv2:ControlPort ;
         lv2:index 2 ;
-        lv2:symbol "GAIN" ;
-        lv2:name "GAIN" ;
+        lv2:symbol "BASS" ;
+        lv2:name "BASS" ;
         lv2:default 0.5 ;
         lv2:minimum 0.0 ;
         lv2:maximum 1.0 ;
-    ]       , [
+    ]      , [
         a lv2:InputPort ,
             lv2:ControlPort ;
         lv2:index 3 ;
@@ -88,47 +89,48 @@ rdfs:comment """
         lv2:default 0.5 ;
         lv2:minimum 0.0 ;
         lv2:maximum 1.0 ;
-    ]       , [
+    ]      , [
         a lv2:InputPort ,
             lv2:ControlPort ;
         lv2:index 4 ;
-        lv2:symbol "BASS" ;
-        lv2:name "BASS" ;
+        lv2:symbol "GAIN" ;
+        lv2:name "GAIN" ;
         lv2:default 0.5 ;
         lv2:minimum 0.0 ;
         lv2:maximum 1.0 ;
-    ]       , [
+    ]      , [
         a lv2:InputPort ,
             lv2:ControlPort ;
         lv2:index 5 ;
-        lv2:symbol "TREBLE" ;
-        lv2:name "TREBLE" ;
-        lv2:default 0.5 ;
-        lv2:minimum 0.0 ;
-        lv2:maximum 1.0 ;
-    ]       , [
-        a lv2:InputPort ,
-            lv2:ControlPort ;
-        lv2:index 6 ;
         lv2:symbol "REVERBLEVEL" ;
         lv2:name "REVERBLEVEL" ;
         lv2:default 0.5 ;
         lv2:minimum 0.0 ;
         lv2:maximum 1.0 ;
-    ]       , [
+    ]      , [
         a lv2:InputPort ,
             lv2:ControlPort ;
-        lv2:index 7 ;
+        lv2:index 6 ;
         lv2:symbol "REVERB" ;
         lv2:name "REVERB" ;
-        lv2:default 1.0 ;
+        lv2:default 0.0 ;
         lv2:minimum 0.0 ;
         lv2:maximum 1.0 ;
         lv2:portProperty lv2:integer;
         lv2:portProperty lv2:enumeration ; 
-        lv2:scalePoint [rdfs:label "ON"; rdf:value 0];
-        lv2:scalePoint [rdfs:label "OFF"; rdf:value 1];
-    ]       , [
+        lv2:scalePoint [rdfs:label "OFF"; rdf:value 0];
+        lv2:scalePoint [rdfs:label "ON"; rdf:value 1];
+
+    ]      , [
+        a lv2:InputPort ,
+            lv2:ControlPort ;
+        lv2:index 7 ;
+        lv2:symbol "TREBLE" ;
+        lv2:name "TREBLE" ;
+        lv2:default 0.5 ;
+        lv2:minimum 0.0 ;
+        lv2:maximum 1.0 ;
+    ]      , [
         a lv2:InputPort ,
             lv2:ControlPort ;
         lv2:index 8 ;
@@ -138,3 +140,9 @@ rdfs:comment """
         lv2:minimum 0.0 ;
         lv2:maximum 1.0 ;
     ] .
+
+<http://guitarix.sourceforge.net/plugins/gx_uvox_gui#_uvox_>
+  a guiext:GtkUI;
+  guiext:binary <gx_uvox_ui.so>;
+  guiext:requiredFeature guiext:makeResident;
+  .

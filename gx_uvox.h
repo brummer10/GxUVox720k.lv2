@@ -25,19 +25,19 @@
 #include <lv2.h>
 
 #define GXPLUGIN_URI "http://guitarix.sourceforge.net/plugins/gx_uvox_"
-#define GXPLUGIN_UI_URI "http://guitarix.sourceforge.net/plugins/gx_uvox_gui"
+#define GXPLUGIN_UI_URI "http://guitarix.sourceforge.net/plugins/gx_uvox_gui#_uvox_"
 
 
 typedef enum
 {
    EFFECTS_OUTPUT,
    EFFECTS_INPUT,
-   GAIN, 
-   CLIPPING, 
    BASS, 
-   TREBLE, 
+   CLIPPING, 
+   GAIN, 
    REVERBLEVEL, 
    REVERB, 
+   TREBLE, 
    VOLUME, 
 } PortIndex;
 
