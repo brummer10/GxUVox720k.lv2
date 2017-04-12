@@ -138,7 +138,7 @@ Analog simulation of the UniVox (*) 720k solid state amp as LV2 plugin.
         lv2:index 8 ;
         lv2:symbol "VOLUME" ;
         lv2:name "VOLUME" ;
-        lv2:default 0.25 ;
+        lv2:default 0.17 ;
         lv2:minimum 0.0 ;
         lv2:maximum 1.0 ;
     ] .

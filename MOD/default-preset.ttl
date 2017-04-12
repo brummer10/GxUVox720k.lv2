@@ -25,6 +25,6 @@
 		pset:value 0.5
 	] , [
 		lv2:symbol "VOLUME" ;
-		pset:value 0.25
+		pset:value 0.17
 	] .
 
