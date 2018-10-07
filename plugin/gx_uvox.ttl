@@ -142,7 +142,8 @@ rdfs:comment """
     ] .
 
 <http://guitarix.sourceforge.net/plugins/gx_uvox_gui#_uvox_>
-  a guiext:GtkUI;
+  a guiext:X11UI;
   guiext:binary <gx_uvox_ui.so>;
-  guiext:requiredFeature guiext:makeResident;
+        lv2:extensionData guiext::idle ; 
+        lv2:requiredFeature guiext:makeResident;
   .
